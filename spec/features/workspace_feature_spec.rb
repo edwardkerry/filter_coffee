@@ -20,5 +20,4 @@ feature "work spaces" do
       expect(page).not_to have_content "No workspaces added"
     end
   end
-
 end
