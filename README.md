@@ -35,15 +35,19 @@ attribute to contribute to the overall rating of the work place
 As a busy user, so that I can see the closest work places, I want to be able
 to see the nearest work places on a map
 --------------------------------------------------------------------------------
-As a picky user, so that I can choose the best work space for me, I want to be
+As a picky user, so that I can choose the best work place for me, I want to be
 able to filter work places by attribute
 --------------------------------------------------------------------------------
 <!-- As an active user, to ensure validity of information,
 I want to be able to edit the information on a work place -->
 --------------------------------------------------------------------------------
-As an active user, to ensure only appropriate working spaces are shown,
-I want to be able to delete a work place
+<!-- As an active user, to ensure only appropriate work place are shown,
+I want to be able to delete a work place -->
 --------------------------------------------------------------------------------
+As an active user, to ensure information on working place is accurate,
+I want to impose a minimum name length 
+
+
 <!-- Users can register/login
 A user must be logged in to create restaurants
 Users can only edit/delete restaurants which they've created
