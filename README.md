@@ -1,6 +1,8 @@
 # filter_coffee
 
+
 User Stories
+[![Stories in Ready](https://badge.waffle.io/edwardkerry/filter_coffee.svg?label=ready&title=Ready)](http://waffle.io/edwardkerry/filter_coffee)
 --------------------------------------------------------------------------------
 As a remote worker, so that I can work remotely
 I want to see a list of work spaces
