@@ -39,6 +39,18 @@ feature "work spaces" do
     end
   end
 
+  context "editing workspace entry" do
+    scenario"lets a user edit a workspace" do
+      add_workspace
+      click_link "SecondHome"
+      click_link "Edit SecondHome"
+      fill_in "Name", with: "Forges"
+      click_button "Update Workspace"
+      expect(page).to have_content "Forges"
+      expect(page).to have_content "Edit successful"
+      expect(page).not_to have_content "SecondHome"
+    end
+  end
 
 
 end

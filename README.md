@@ -38,6 +38,12 @@ to see the nearest work places on a map
 As a picky user, so that I can choose the best work space for me, I want to be
 able to filter work places by attribute
 --------------------------------------------------------------------------------
+As an active user, to ensure validity of information,
+I want to be able to edit the information on a work place
+--------------------------------------------------------------------------------
+As an active user, to ensure only appropriate working spaces are shown,
+I want to be able to delete a work place
+--------------------------------------------------------------------------------
 <!-- Users can register/login
 A user must be logged in to create restaurants
 Users can only edit/delete restaurants which they've created

@@ -17,6 +17,18 @@ class WorkspacesController < ApplicationController
     @workspace = Workspace.find(params[:id])
   end
 
+  def edit
+    @workspace = Workspace.find(params[:id])
+  end
+
+  def update
+    @workspace = Workspace.find(params[:id])
+    @workspace.update(workspace_params)
+    flash[:notice] = "Edit successful"
+    redirect_to workspace_path(@workspace)
+  end
+
+
   def workspace_params
     params.require(:workspace).permit(:name)
   end
