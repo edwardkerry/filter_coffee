@@ -13,6 +13,10 @@ class WorkspacesController < ApplicationController
     redirect_to "/workspaces"
   end
 
+  def show
+    @workspace = Workspace.find(params[:id])
+  end
+
   def workspace_params
     params.require(:workspace).permit(:name)
   end

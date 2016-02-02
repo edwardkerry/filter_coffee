@@ -29,12 +29,16 @@ feature "work spaces" do
     end
   end
 
-  context "viewing detailed views" do
+  context "detailed view" do
+  let!(:secondhome){Workspace.create(name: "SecondHome")}
     scenario"lets a user view a workspace" do
-      add_workspace
+      visit '/workspaces'
       click_link "SecondHome"
-      expect(current_path).to eq "/workspace/#{secondhome.id}"
+      expect(current_path).to eq "/workspaces/#{secondhome.id}"
+      expect(page).to have_content "Welcome to SecondHome"
     end
   end
+
+
 
 end
