@@ -1,18 +1,9 @@
-No workspaces added
+<% if Workspace.all.any? %>
+  <% Workspace.all.each do |workspace| %>
+    <h2><%= workspace.name %></h2>
+  <% end %>
+<% else %>
+    <h1> No workspaces added </h1>
+<% end %>
 
-<button>Add a workspace</button>
-
-<!DOCTYPE html>
-<html>
-  <head>
-  <title>filter_coffee</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  </head>
-  <body>
-
-    <%= yield %>
-
-  </body>
-</html>
+<button> Add a workspace </button>

@@ -11,7 +11,7 @@ feature "work spaces" do
 
   context "when workspaces have been added" do
     before do
-      Workspace.create(name :"SecondHome")
+      Workspace.create(name: "SecondHome")
     end
 
     scenario "display workspace" do
