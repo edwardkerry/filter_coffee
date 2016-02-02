@@ -1,7 +1,7 @@
 class WorkspacesController < ApplicationController
 
   def index
-    @workspace = Workspace.all
+    @workspaces = Workspace.all
   end
 
   def new
@@ -9,8 +9,12 @@ class WorkspacesController < ApplicationController
   end
 
   def create
-    @workspace = Workspace.create(workspace_params)
-    redirect_to "/workspaces"
+    @workspace = Workspace.new(workspace_params)
+    if @workspace.save
+      redirect_to "/workspaces"
+    else
+      render "new"
+    end
   end
 
   def show
