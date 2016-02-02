@@ -1,7 +1,7 @@
 
 <% if @workspace.any? %>
   <% @workspace.each do |workspace| %>
-    <h2><%= workspace.name %></h2>
+    <h2><%= link_to workspace.name, workspace_path(workspace) %></h2>
   <% end %>
 <% else %>
     <h1> No workspaces added </h1>
