@@ -9,4 +9,16 @@ feature "work spaces" do
     end
   end
 
+  context "when workspaces have been added" do
+    before do
+      Workspace.create(name :"SecondHome")
+    end
+
+    scenario "display workspace" do
+      visit "/workspaces"
+      expect(page).to have_content "SecondHome"
+      expect(page).not_to have_content "No workspaces added"
+    end
+  end
+
 end
