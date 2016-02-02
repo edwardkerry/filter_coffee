@@ -23,13 +23,12 @@ feature "work spaces" do
 
   context "creating workspaces" do
     scenario "prompts user to fill out a form to add a new workspace, then displays it" do
-    visit "/workspaces"
-    click_link "Add a workspace"
-    fill_in "Name", with: "SecondHome"
-    click_button "Create Workspace"
-    expect(page).to have_content "SecondHome"
-    expect(current_path).to eq "/workspaces"
+      visit "/workspaces"
+      click_link "Add a workspace"
+      fill_in "Name", with: "SecondHome"
+      click_button "Create Workspace"
+      expect(page).to have_content "SecondHome"
+      expect(current_path).to eq "/workspaces"
+    end
   end
-end
-
 end
