@@ -1,5 +1,5 @@
-<% if Workspace.all.any? %>
-  <% Workspace.all.each do |workspace| %>
+<% if @workspace.any? %>
+  <% @workspace.each do |workspace| %>
     <h2><%= workspace.name %></h2>
   <% end %>
 <% else %>
