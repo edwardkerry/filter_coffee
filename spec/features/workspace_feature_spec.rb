@@ -52,5 +52,16 @@ feature "work spaces" do
     end
   end
 
+  context "deleting workspace entry" do
+    scenario"lets a user delete a workspace" do
+      add_workspace
+      click_link "SecondHome"
+      click_link "Delete SecondHome"
+      expect(current_path).to eq "/workspaces"
+      expect(page).to have_content "Delete successful"
+      expect(page).not_to have_content "SecondHome"
+    end
+  end
+
 
 end

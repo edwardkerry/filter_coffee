@@ -28,6 +28,12 @@ class WorkspacesController < ApplicationController
     redirect_to workspace_path(@workspace)
   end
 
+  def destroy
+    @workspace = Workspace.find(params[:id])
+    @workspace.destroy
+    flash[:notice] = "Delete successful"
+    redirect_to "/workspaces"
+  end
 
   def workspace_params
     params.require(:workspace).permit(:name)

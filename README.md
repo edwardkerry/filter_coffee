@@ -8,11 +8,11 @@ User Stories
 --------------------------------------------------------------------------------
 [![Stories in Ready](https://badge.waffle.io/edwardkerry/filter_coffee.svg?label=ready&title=Ready)](http://waffle.io/edwardkerry/filter_coffee)
 --------------------------------------------------------------------------------
-As a remote worker, so that I can work remotely
-I want to see a list of work spaces
+<!-- As a remote worker, so that I can work remotely
+I want to see a list of work spaces -->
 --------------------------------------------------------------------------------
-As an engaged remote worker, so that I can share my fav places
-I want to be able to add my spots to the list
+<!-- As an engaged remote worker, so that I can share my fav places
+I want to be able to add my spots to the list -->
 --------------------------------------------------------------------------------
 As an engaged remote worker, so that I can decide which place to go,
 I want to be able to see ratings of other users (stars)
@@ -20,8 +20,8 @@ I want to be able to see ratings of other users (stars)
 As an active user, so that I can share my view,
 I want to be able to add a star rating
 --------------------------------------------------------------------------------
-As an interested remote worker, so that I can make a an informed choice,
-I want to be able to see attributes of the different work spaces
+<!-- As an interested remote worker, so that I can make a an informed choice,
+I want to be able to see attributes of the different work spaces -->
 --------------------------------------------------------------------------------
 As an active user, so that I can share my view,
 I want to be able to add a star rating of different attributes
@@ -38,8 +38,8 @@ to see the nearest work places on a map
 As a picky user, so that I can choose the best work space for me, I want to be
 able to filter work places by attribute
 --------------------------------------------------------------------------------
-As an active user, to ensure validity of information,
-I want to be able to edit the information on a work place
+<!-- As an active user, to ensure validity of information,
+I want to be able to edit the information on a work place -->
 --------------------------------------------------------------------------------
 As an active user, to ensure only appropriate working spaces are shown,
 I want to be able to delete a work place
