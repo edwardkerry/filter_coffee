@@ -25,6 +25,6 @@ feature "rating workspaces" do
     sign_up("zade@hamid.com", "testtest", "testtest")
     rate_workspace("Trade", 1)
     click_link "Trade"
-    expect(page).to have_content "WiFi rating: 2.5"
+    expect(page).to have_content "WiFi rating: 3"
   end
 end
