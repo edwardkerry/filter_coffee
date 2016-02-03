@@ -18,6 +18,7 @@ RSpec.describe Workspace, type: :model do
         workspace.ratings.create(wifi: 5, seating: 5)
         p workspace
         expect(workspace.average_rating(:wifi)).to eq 5
+        expect(workspace.average_rating(:seating)).to eq 5
       end
     end
 
@@ -25,8 +26,9 @@ RSpec.describe Workspace, type: :model do
       it "returns average ratings" do
         workspace = Workspace.create(name: "space")
         workspace.ratings.create(wifi: 5, seating:5)
-        workspace.ratings.create(wifi: 1, seating:5)
+        workspace.ratings.create(wifi: 1, seating:1)
         expect(workspace.average_rating(:wifi)).to eq 3
+        expect(workspace.average_rating(:seating)).to eq 3
       end
     end
   end
