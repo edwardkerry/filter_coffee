@@ -1,0 +1,1 @@
+RSPEC_API_KEY = 'AIzaSyAkk0WzkJl4oPNEYm6YbpXasQHRfHB3zSk'

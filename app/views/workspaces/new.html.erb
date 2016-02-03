@@ -14,3 +14,12 @@
   <%= f.text_field :name %>
   <%= f.submit %>
 <% end %>
+
+<ul>
+  <% @spots.each do |spot| %>
+    <li>
+      <p> <%=p spot.name %> </p>
+      <p> <%=p spot.formatted_phone_number %> </p>
+    </li>
+    <% end %>
+</ul>

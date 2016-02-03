@@ -7,6 +7,8 @@ class WorkspacesController < ApplicationController
 
   def new
     @workspace = Workspace.new
+    @client = GooglePlaces::Client.new('AIzaSyAkk0WzkJl4oPNEYm6YbpXasQHRfHB3zSk')
+    @spots = @client.spots(51.517912, -0.0737660)
   end
 
   def create
