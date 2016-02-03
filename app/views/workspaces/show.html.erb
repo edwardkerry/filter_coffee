@@ -5,6 +5,11 @@
             <h1> Welcome to <%= @workspace.name %>
             <%= link_to "Edit #{@workspace.name}", edit_workspace_path(@workspace) %>
             <%= link_to "Delete #{@workspace.name}", workspace_path(@workspace), method: :delete %>
+            <ul>
+              <% @workspace.ratings.each do |rating|%>
+              <p> WiFi rating: <%= rating.wifi %> </p>
+              <% end %>
+            </ul>
         </div>
     </div>
 </div>
