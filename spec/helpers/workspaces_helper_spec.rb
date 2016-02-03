@@ -1,6 +1,4 @@
-def sign_up(email: "dg@daniela.com",
-            password: "testtest",
-            password_confirmation: "testtest")
+def sign_up(email, password, password_confirmation)
   visit "/workspaces"
   click_link("Sign up")
   fill_in("Email", with: email)

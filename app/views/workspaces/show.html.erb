@@ -7,7 +7,7 @@
             <%= link_to "Delete #{@workspace.name}", workspace_path(@workspace), method: :delete %>
             <ul>
               <% @workspace.ratings.each do |rating|%>
-              <p> WiFi rating: <%= rating.wifi %> </p>
+              <p> WiFi rating: <%= rating.average_rating %> </p>
               <% end %>
             </ul>
         </div>
