@@ -8,14 +8,13 @@
     </ul>
   </section>
 <% end %>
-<!-- <div id="pac_input"> -->
+
 <%= form_for Workspace.new do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
-  <!-- <%= f.text_field :latitude %>
-  <%= f.text_field :longitude %> -->
 <% end %>
+</div>
 
 <ul>
   <% @spots.each do |spot| %>
@@ -25,3 +24,13 @@
     </li>
     <% end %>
 </ul>
+
+
+  <!-- <body> -->
+    <!-- <div id="map"></div> -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWtGIuGMTn4AAhO1lMnyNH68UzPeffrtI&libraries=places&callback=initAutocomplete"
+        async defer></script>
+<!-- <script src="j.js"></script> -->
+
+<!-- </body> -->
+<!-- </html> -->

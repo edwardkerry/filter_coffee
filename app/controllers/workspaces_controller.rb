@@ -12,7 +12,6 @@ class WorkspacesController < ApplicationController
   end
 
   def create
-    byebug
     @workspace = Workspace.new(workspace_params)
     if @workspace.save
       redirect_to "/workspaces"
