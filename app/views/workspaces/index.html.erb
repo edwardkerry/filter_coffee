@@ -1,10 +1,43 @@
-<%= link_to "Add a workspace", new_workspace_path %>
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="intro-text">
+            <!-- <div class="intro-lead-in">Welcome To Our Studio!</div> -->
+            <div class="intro-heading">Need a place to work...?</div>
+            <input type="text" placeholder="find a spot..."></input>
+            <button class="btn-l">Search</button>
+        </div>
+    </div>
+</header>
 
-<% if @workspaces.any? %>
-  <% @workspaces.each do |workspace| %>
-    <h2><%= link_to workspace.name, workspace_path(workspace) %></h2>
-    <%= link_to "Rate #{workspace.name}", new_workspace_rating_path(workspace) %>
-  <% end %>
-<% else %>
-  <h1> No workspaces added </h1>
-<% end %>
+<section id="cafes">
+  <div class="col-md-8 venue-list">
+    <ul class="venue">
+      <% if @workspaces.any? %>
+        <% @workspaces.each do |workspace| %>
+        <li class="venue-details">
+          <h2><%= link_to workspace.name, workspace_path(workspace) %></h2>
+          <p><%= link_to "Rate #{workspace.name}", new_workspace_rating_path(workspace) %></p>
+        </li>
+        <% end %>
+      <% else %>
+      <li class="venue-details">
+        <h2>No workspaces added!</h2>
+        <p><%= link_to "Add a workspace!", new_workspace_path %></p>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-md-4 map">Map goes here...</div>
+</section>
+
+<!-- # <%= link_to "Add a workspace", new_workspace_path %>
+#
+# <% if @workspaces.any? %>
+#   <% @workspaces.each do |workspace| %>
+#     <h2><%= link_to workspace.name, workspace_path(workspace) %></h2>
+#     <%= link_to "Rate #{workspace.name}", new_workspace_rating_path(workspace) %>
+#   <% end %>
+# <% else %>
+#   <h1> No workspaces added </h1>
+# <% end %> -->
