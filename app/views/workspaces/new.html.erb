@@ -8,13 +8,13 @@
     </ul>
   </section>
 <% end %>
-
+<!-- <div id="pac_input"> -->
 <%= form_for Workspace.new do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
-  <%= f.text_field :latitude %>
-  <%= f.text_field :longitude %>
+  <!-- <%= f.text_field :latitude %>
+  <%= f.text_field :longitude %> -->
 <% end %>
 
 <ul>
