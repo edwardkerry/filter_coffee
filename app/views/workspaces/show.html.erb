@@ -1,0 +1,3 @@
+<h1> Welcome to <%= @workspace.name %>
+<%= link_to "Edit #{@workspace.name}", edit_workspace_path(@workspace) %>
+<%= link_to "Delete #{@workspace.name}", workspace_path(@workspace), method: :delete %>

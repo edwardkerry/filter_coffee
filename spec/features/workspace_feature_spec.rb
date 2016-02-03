@@ -23,12 +23,45 @@ feature "work spaces" do
 
   context "creating workspaces" do
     scenario "prompts user to fill out a form to add a new workspace, then displays it" do
-      visit "/workspaces"
-      click_link "Add a workspace"
-      fill_in "Name", with: "SecondHome"
-      click_button "Create Workspace"
+      add_workspace
       expect(page).to have_content "SecondHome"
       expect(current_path).to eq "/workspaces"
     end
   end
+
+  context "detailed view" do
+  let!(:secondhome){Workspace.create(name: "SecondHome")}
+    scenario"lets a user view a workspace" do
+      visit '/workspaces'
+      click_link "SecondHome"
+      expect(current_path).to eq "/workspaces/#{secondhome.id}"
+      expect(page).to have_content "Welcome to SecondHome"
+    end
+  end
+
+  context "editing workspace entry" do
+    scenario"lets a user edit a workspace" do
+      add_workspace
+      click_link "SecondHome"
+      click_link "Edit SecondHome"
+      fill_in "Name", with: "Forges"
+      click_button "Update Workspace"
+      expect(page).to have_content "Forges"
+      expect(page).to have_content "Edit successful"
+      expect(page).not_to have_content "SecondHome"
+    end
+  end
+
+  context "deleting workspace entry" do
+    scenario"lets a user delete a workspace" do
+      add_workspace
+      click_link "SecondHome"
+      click_link "Delete SecondHome"
+      expect(current_path).to eq "/workspaces"
+      expect(page).to have_content "Delete successful"
+      expect(page).not_to have_content "SecondHome"
+    end
+  end
+
+
 end

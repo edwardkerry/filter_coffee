@@ -1,3 +1,14 @@
+<% if @workspace.errors.any? %>
+  <section id="errors" >
+    <h2> <%= pluralize(@workspace.errors.count, "error") %> prohibited this workspace from being saved: </h2>
+    <ul>
+      <% @workspace.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
 <%= form_for Workspace.new do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
