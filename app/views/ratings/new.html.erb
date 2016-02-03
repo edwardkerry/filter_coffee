@@ -5,9 +5,10 @@
             <%= form_for [@workspace, @rating] do |f| %>
               <%= f.label "WiFi rating"%>
               <%= f.select :wifi, (1..5) %>
+              <%= f.label "Seating rating"%>
+              <%= f.select :seating, (1..5) %>
               <%= f.submit "Submit" %>
             <% end %>
         </div>
     </div>
-
 </div>

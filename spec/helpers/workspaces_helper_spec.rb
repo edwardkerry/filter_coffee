@@ -1,6 +1,4 @@
-def sign_up(email: "dg@daniela.com",
-            password: "testtest",
-            password_confirmation: "testtest")
+def sign_up(email, password, password_confirmation)
   visit "/workspaces"
   click_link("Sign up")
   fill_in("Email", with: email)
@@ -16,9 +14,10 @@ def add_workspace(name)
   click_button "Create Workspace"
 end
 
-def rate_workspace(name, rating)
+def rate_workspace(name, wifi_rating, seating_rating)
   visit "/workspaces"
   click_link "Rate #{name}"
-  select rating, from: "rating_wifi"
+  select wifi_rating, from: "rating_wifi"
+  select seating_rating, from: "rating_seating"
   click_button "Submit"
 end

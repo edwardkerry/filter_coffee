@@ -3,7 +3,7 @@ require "rails_helper"
 feature "work spaces" do
 
   context "when no work spaces have been added" do
-      scenario "it should display a prompt" do
+    scenario "it should display a prompt" do
       visit "/workspaces"
       expect(page).to have_content "No workspaces added"
       expect(page).to have_link "Add a workspace"
@@ -24,7 +24,7 @@ feature "work spaces" do
 
   context "creating workspaces" do
     scenario "prompts user to fill out a form to add a new workspace, then displays it" do
-      sign_up
+      sign_up("dg@daniela.com", "testtest", "testtest")
       add_workspace("SecondHome")
       expect(page).to have_content "SecondHome"
       expect(current_path).to eq "/workspaces"
@@ -43,7 +43,7 @@ feature "work spaces" do
 
   context "editing workspace entry" do
     scenario"lets a user edit a workspace" do
-      sign_up
+      sign_up("dg@daniela.com", "testtest", "testtest")
       add_workspace("SecondHome")
       click_link "SecondHome"
       click_link "Edit SecondHome"
@@ -57,7 +57,7 @@ feature "work spaces" do
 
   context "deleting workspace entry" do
     scenario"lets a user delete a workspace" do
-      sign_up
+      sign_up("dg@daniela.com", "testtest", "testtest")
       add_workspace("SecondHome")
       click_link "SecondHome"
       click_link "Delete SecondHome"
