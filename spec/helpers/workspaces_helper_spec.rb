@@ -18,5 +18,6 @@ def rate_workspace(name, rating)
   visit "/workspaces"
   click_link "Rate #{name}"
   select rating, from: "rating_wifi"
+  select rating, from: "rating_seating"
   click_button "Submit"
 end
