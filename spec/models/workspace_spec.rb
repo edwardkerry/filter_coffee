@@ -16,7 +16,6 @@ RSpec.describe Workspace, type: :model do
       it "returns a rating when rated" do
         workspace = Workspace.create(name: "space")
         workspace.ratings.create(wifi: 5, seating: 5, outlets: 5, noise: 5)
-        p workspace
         expect(workspace.average_rating(:wifi)).to eq 5
         expect(workspace.average_rating(:seating)).to eq 5
         expect(workspace.average_rating(:outlets)).to eq 5

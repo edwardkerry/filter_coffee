@@ -14,12 +14,13 @@ def add_workspace(name)
   click_button "Create Workspace"
 end
 
-def rate_workspace(name, wifi_rating, seating_rating, outlets_rating, noise_rating)
+def rate_workspace(name, wifi_rating, seating_rating, outlets_rating, noise_rating, coffee_rating)
   visit "/workspaces"
   click_link "Rate #{name}"
   select wifi_rating, from: "rating_wifi"
   select seating_rating, from: "rating_seating"
   select outlets_rating, from: "rating_outlets"
   select noise_rating, from: "rating_noise"
+  select coffee_rating, from: "rating_coffee"
   click_button "Submit"
 end
