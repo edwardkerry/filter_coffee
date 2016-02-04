@@ -40,6 +40,12 @@
 
  .panel {
    border-radius: 8px;
+   margin-bottom: 5px;
+   border: 5px solid rgba(255, 255, 255, .5);
+ }
+
+ .chars {
+   opacity: 0.5;
  }
 
  .panel-heading h1 {

@@ -10,21 +10,21 @@
             <%= devise_error_messages! %>
 
                 <div class="panel-body">
-                  <%= f.label :email %><br />
-                  <%= f.email_field :email, autofocus: true %>
+                   
+                  <%= f.email_field :email, :class => 'panel', required: true, autofocus: true, label: false, placeholder: 'Email', input_html: { class: 'input-lg' } %>
                 </div>
 
                 <div class="panel-body">
-                  <%= f.label :password %>
+                 
                   <% if @minimum_password_length %>
-                  <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <em class="chars">(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %><br />
-                  <%= f.password_field :password, autocomplete: "off", :class => 'panel', required: true, label: false, placeholder: 'Password' %>
+                  <%= f.password_field :password, :class => 'panel', autocomplete: "off", required: true, label: false, placeholder: 'Password', input_html: { class: 'input-lg' } %>
                 </div>
 
                 <div class="panel-body">
-                  <%= f.label :password_confirmation %><br />
-                  <%= f.password_field :password_confirmation, autocomplete: "off" %>
+                
+                  <%= f.password_field :password_confirmation, :class => 'panel', required: true, label: false, placeholder: 'Confirm Password', input_html: { class: 'input-lg' } %>
                 </div>
 
                 <div class="panel-body">
