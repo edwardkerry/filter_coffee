@@ -62,7 +62,7 @@
    color: green;
  }
 
- .add-place {
+ .add-place, .workspace {
    padding-top: 10%;
    height: 100%;
    background-image: url('header-bg.jpg');
@@ -72,7 +72,7 @@
    background-size: cover;
  }
 
- .add-place-panel {
+ .add-place-panel, .workspaces-panel {
    border-radius: 8px;
    margin-bottom: 5px;
    border: 5px solid rgba(255, 255, 255, .5);
