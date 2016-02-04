@@ -9,16 +9,16 @@
   </section>
 <% end %>
 
-<%= form_for Workspace.new do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, placeholder: "kaffeniate me!" %>
-  <%= f.submit %>
-<% end %>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Add A Place!</h2>
+            <%= form_for Workspace.new do |f| %>
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+              <%= f.submit %>
+            <% end %>
+        </div>
+    </div>
 
-    <% if @spot %>
-      <p> <%=p spot.name %> </p>
-      <p> <%=p spot.formatted_phone_number %> </p>
-    <% end %>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWtGIuGMTn4AAhO1lMnyNH68UzPeffrtI&libraries=places&callback=initAutocomplete"
-        async defer></script>
+</div>

@@ -12,6 +12,6 @@ class RatingsController < ApplicationController
   end
 
   def rating_params
-    params.require(:rating).permit(:wifi)
+    params.require(:rating).permit(:wifi, :seating)
   end
 end

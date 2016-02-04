@@ -24,15 +24,15 @@ feature "work spaces" do
 
   context "creating workspaces" do
     scenario "prompts user to fill out a form to add a new workspace, then displays it" do
-      sign_up
-      add_workspace
+      sign_up("dg@daniela.com", "testtest", "testtest")
+      add_workspace("SecondHome")
       expect(page).to have_content "SecondHome"
       expect(current_path).to eq "/workspaces"
     end
   end
 
   context "detailed view" do
-  let!(:secondhome){Workspace.create(name: "SecondHome")}
+    let!(:secondhome){Workspace.create(name: "SecondHome")}
     scenario"lets a user view a workspace" do
       visit '/workspaces'
       click_link "SecondHome"
@@ -43,8 +43,8 @@ feature "work spaces" do
 
   context "editing workspace entry" do
     scenario"lets a user edit a workspace" do
-      sign_up
-      add_workspace
+      sign_up("dg@daniela.com", "testtest", "testtest")
+      add_workspace("SecondHome")
       click_link "SecondHome"
       click_link "Edit SecondHome"
       fill_in "Name", with: "Forges"
@@ -57,8 +57,8 @@ feature "work spaces" do
 
   context "deleting workspace entry" do
     scenario"lets a user delete a workspace" do
-      sign_up
-      add_workspace
+      sign_up("dg@daniela.com", "testtest", "testtest")
+      add_workspace("SecondHome")
       click_link "SecondHome"
       click_link "Delete SecondHome"
       expect(current_path).to eq "/workspaces"
@@ -66,6 +66,4 @@ feature "work spaces" do
       expect(page).not_to have_content "SecondHome"
     end
   end
-
-
 end
