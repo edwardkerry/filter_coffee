@@ -21,6 +21,8 @@
    width: 80%;
  }
 
+
+
  .registration-bg {
    padding-top: 10%;
    height: 100%;
@@ -51,3 +53,35 @@
  .panel-heading h1 {
    text-align: center;
  }
+
+ .add-place-button {
+   width: 80%;
+ }
+
+ .place-title {
+   color: green;
+ }
+
+ .add-place, .workspace {
+   padding-top: 10%;
+   height: 100%;
+   background-image: url('header-bg.jpg');
+   -moz-background-size: cover;
+   -webkit-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+ .add-place-panel, .workspaces-panel {
+   border-radius: 8px;
+   margin-bottom: 5px;
+   border: 5px solid rgba(255, 255, 255, .5);
+   background: hsla(0, 100%, 100%, 0.6);
+   margin-right: 0px;
+   position: relative;
+   text-align: center;
+
+ }
+
+
+
