@@ -8,7 +8,11 @@
             <ul>
               <p> WiFi rating: <%= @workspace.average_rating(:wifi).to_i %> </p>
               <p> Seating rating: <%= @workspace.average_rating(:seating).to_i %> </p>
+              <p> Outlets rating: <%= @workspace.average_rating(:outlets).to_i %> </p>
+              <p> Noise level rating: <%= @workspace.average_rating(:noise).to_i %> </p>
+              <p> Coffee rating: <%= @workspace.average_rating(:coffee).to_i %> </p>
             </ul>
         </div>
     </div>
 </div>
+ 
