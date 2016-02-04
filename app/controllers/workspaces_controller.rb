@@ -13,10 +13,10 @@ class WorkspacesController < ApplicationController
   end
 
   def create
-    @workspace = Workspace.new(name: workspace_params[:name].split(",")[0], address: workspace_params.split(",").shift)
+    @workspace = Workspace.new(name: workspace_params[:name].split(",")[0], address: workspace_params[:name].split(",").unshift)
 
-    # @client = GooglePlaces::Client.new('AIzaSyAkk0WzkJl4oPNEYm6YbpXasQHRfHB3zSk')
-    # @spot = @client.spot("#{@workspace.latitude},#{@workspace.longitude}")
+    @client = GooglePlaces::Client.new('AIzaSyAkk0WzkJl4oPNEYm6YbpXasQHRfHB3zSk')
+    @spot = @client.spot("#{@workspace.latitude},#{@workspace.longitude}")
 
       if @workspace.save
         get_place_id(@workspace)

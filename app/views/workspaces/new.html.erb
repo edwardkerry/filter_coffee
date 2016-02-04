@@ -16,7 +16,9 @@
 <% end %>
 </div>
 
-
-
+    <% if @spot %>
+      <p> <%=p spot.name %> </p>
+      <p> <%=p spot.formatted_phone_number %> </p>
+    <% end %>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWtGIuGMTn4AAhO1lMnyNH68UzPeffrtI&libraries=places&callback=initAutocomplete"
         async defer></script>
