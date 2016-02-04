@@ -19,6 +19,9 @@
           <h2><%= link_to workspace.name, workspace_path(workspace) %></h2>
           <p><%= link_to "Rate #{workspace.name}", new_workspace_rating_path(workspace) %></p>
         </li>
+          <% if workspace.ratings.any? %>
+            <p>Overall rating: <%= "#{workspace.overall_rating.to_i}" %></p>
+          <% end %>
         <% end %>
       <% else %>
       <li class="venue-details">

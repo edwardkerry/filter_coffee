@@ -38,13 +38,20 @@ RSpec.describe Workspace, type: :model do
     end
   end
 
-  context "overall ratings" do
-    it "returns based on wifi, seating, outlets, noise and coffee ratings" do
-      workspace = Workspace.create(name: "space")
-      workspace.ratings.create(wifi: 5, seating: 5, outlets: 5, noise: 5, coffee: 5)
-      p workspace
-      p workspace.ratings
-      expect(workspace.overall_rating).to eq 5
+  describe "#overall_ratings" do
+    context "no ratings" do
+      it "returns N/A when there are no ratings" do
+        workspace = Workspace.create(name: "space")
+        expect(workspace.overall_rating).to eq "N/A"
+      end
+    end
+
+    context "returns overall ratings" do
+      it "based on wifi, seating, outlets, noise and coffee ratings" do
+        workspace = Workspace.create(name: "space")
+        workspace.ratings.create(wifi: 5, seating: 4, outlets: 3, noise: 2, coffee: 1)
+        expect(workspace.overall_rating).to eq 3
+      end
     end
   end
 end
