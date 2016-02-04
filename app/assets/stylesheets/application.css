@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+ html, body {
+   height: 100%;
+ }
+
+ .sign-up {
+   width: 80%;
+ }
+
+ .registration-bg {
+   padding-top: 10%;
+   height: 100%;
+   background-image: url('regbackg.jpg');
+   -moz-background-size: cover;
+   -webkit-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+ .log-in {
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   border: none;
+ }
+
+ .panel {
+   border-radius: 8px;
+ }
+
+ .panel-heading h1 {
+   text-align: center;
+ }
