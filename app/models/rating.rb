@@ -7,4 +7,6 @@ class Rating < ActiveRecord::Base
   validates :outlets, inclusion: (1..5)
   validates :noise, inclusion: (1..5)
   validates :coffee, inclusion: (1..5)
+
+  validates :user, uniqueness: { scope: :workspace, message: "has rated this workspace already" }
 end

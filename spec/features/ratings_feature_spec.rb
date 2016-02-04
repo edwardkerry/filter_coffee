@@ -16,12 +16,12 @@ feature "rating workspaces" do
     end
   end
 
-  context "rate workspaces once only" do
+  context "once only" do
     scenario "users can only rate workspaces once" do
       add_workspace("Trade")
       rate_workspace("Trade", 5, 1, 5, 5, 1)
       rate_workspace("Trade", 5, 1, 5, 5, 1)
-      expect(page).to have_content "You have already rated Trade's wifi"
+      expect(page).to have_content "You have already rated Trade"
     end
   end
 
