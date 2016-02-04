@@ -1,9 +1,10 @@
 require 'net/http'
 
 class Workspace < ActiveRecord::Base
+  belongs_to :user
 
   has_many :ratings, dependent: :destroy
-  validates :name, length: {minimum: 1}
+  validates :name, length: {minimum: 1}, uniqueness: true
   geocoded_by :name
   after_validation :geocode
 

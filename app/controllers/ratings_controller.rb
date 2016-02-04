@@ -6,12 +6,18 @@ class RatingsController < ApplicationController
 
   def create
     @workspace = Workspace.find(params[:workspace_id])
-    @workspace.ratings.create(rating_params)
+    @rating = @workspace.ratings.new(rating_params)
+
+    unless @rating.save
+      flash[:notice]= "You have already rated #{@workspace.name}"
+    end
 
     redirect_to workspaces_path
   end
 
   def rating_params
-    params.require(:rating).permit(:wifi, :seating, :outlets, :noise, :coffee)
+    new_params = params.require(:rating).permit(:wifi, :seating, :outlets, :noise, :coffee)
+    new_params[:user_id] = current_user.id
+    new_params
   end
 end
