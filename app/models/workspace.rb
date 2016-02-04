@@ -1,8 +1,12 @@
+require 'net/http'
+
 class Workspace < ActiveRecord::Base
   belongs_to :user
 
   has_many :ratings, dependent: :destroy
   validates :name, length: {minimum: 1}, uniqueness: true
+  geocoded_by :name
+  after_validation :geocode
 
   def average_rating(att)
     return "N/A" if ratings.none?
@@ -17,8 +21,8 @@ class Workspace < ActiveRecord::Base
   private
 
   def calculate_attr_average
-    (self.average_rating(:wifi) + self.average_rating(:seating) + 
-      self.average_rating(:outlets) + self.average_rating(:noise) + 
+    (self.average_rating(:wifi) + self.average_rating(:seating) +
+      self.average_rating(:outlets) + self.average_rating(:noise) +
       self.average_rating(:coffee))/5
   end
 end
