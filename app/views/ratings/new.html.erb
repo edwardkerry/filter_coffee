@@ -1,20 +1,26 @@
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Rate This Place!</h2>
-            <%= form_for [@workspace, @rating] do |f| %>
-              <%= f.label "WiFi rating"%>
-              <%= f.select :wifi, (1..5) %>
-              <%= f.label "Seating rating"%>
-              <%= f.select :seating, (1..5) %>
-              <%= f.label "Outlets rating"%>
-              <%= f.select :outlets, (1..5) %>
-              <%= f.label "Noise level rating"%>
-              <%= f.select :noise, (1..5) %>
-              <%= f.label "Coffee rating"%>
-              <%= f.select :coffee, (1..5) %>
-              <%= f.submit "Submit" %>
-            <% end %>
-        </div>
-    </div>
+<div class="rate">
+ <div class="container">
+   <div class="row">
+       <div class="col-lg-12 text-center">
+         <div class="workspaces-panel">
+           <h2 class="section-heading">Rate This Place!</h2>
+           <div class="panel-body">
+           <%= form_for [@workspace, @rating] do |f| %>
+             <%= f.label "WiFi rating"%>
+             <%= f.select :wifi, (1..5) %>
+             <%= f.label "Seating rating"%>
+             <%= f.select :seating, (1..5) %>
+             <%= f.label "Outlets rating"%>
+             <%= f.select :outlets, (1..5) %>
+             <%= f.label "Noise level rating"%>
+             <%= f.select :noise, (1..5) %>
+             <%= f.label "Coffee rating"%>
+             <%= f.select :coffee, (1..5) %>
+             <%= f.submit "Submit" %>
+           <% end %>
+           </div>
+         </div>
+       </div>
+   </div>
+ </div>
 </div>

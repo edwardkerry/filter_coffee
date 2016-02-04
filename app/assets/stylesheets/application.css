@@ -56,7 +56,7 @@
    color: green;
  }
 
- .add-place, .workspace {
+ .add-place, .rate, .workspace {
    padding-top: 10%;
    height: 100%;
    background-image: url('header-bg.jpg');
@@ -74,11 +74,10 @@
    margin-right: 0px;
    position: relative;
    text-align: center;
-
  }
- 
+
   #map_wrapper {
-      height: 400px;
+      height: 800px;
   }
 
   #map_canvas {
