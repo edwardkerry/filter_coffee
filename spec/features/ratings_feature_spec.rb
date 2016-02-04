@@ -11,8 +11,8 @@ feature "rating workspaces" do
       rate_workspace("Trade", 5, 1, 5, 5, 1)
       click_link "Trade"
       expect(page)
-      .to have_content "WiFi rating: 5 Seating rating: 1 Outlets rating: 5 
-                        Noise level rating: 5 Coffee rating: 1"
+      .to have_content "WiFi rating: ★★★★★ Seating rating: ★☆☆☆☆ Outlets rating: ★★★★★ 
+                        Noise level rating: ★★★★★ Coffee rating: ★☆☆☆☆"
     end
   end
 
@@ -32,15 +32,15 @@ feature "rating workspaces" do
       rate_workspace("Trade", 1, 1, 1, 1, 1)
       click_link "Trade"
       expect(page)
-      .to have_content "WiFi rating: 3 Seating rating: 3 Outlets rating: 3 
-                        Noise level rating: 3 Coffee rating: 3"
+      .to have_content "WiFi rating: ★★★☆☆ Seating rating: ★★★☆☆ Outlets rating: ★★★☆☆ 
+                        Noise level rating: ★★★☆☆ Coffee rating: ★★★☆☆"
     end
   end
 
   context "viewing overall average ratings" do
     scenario "users can view overall average of workspaces" do
       rate_workspace("Trade", 5, 5, 5, 5, 5)
-      expect(page).to have_content "Overall rating: 5"
+      expect(page).to have_content "Overall rating: ★★★★★"
     end
   end
 end
