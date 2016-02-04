@@ -61,8 +61,8 @@ RSpec.describe Workspace, type: :model do
 
       context "multiple ratings" do
         before do
-          workspace.ratings.create(wifi: 3, seating: 3, outlets: 3, noise: 3, coffee: 3)
-          workspace.ratings.create(wifi: 1, seating: 1, outlets: 1, noise: 1, coffee: 1)
+          workspace.ratings.new(wifi: 3, seating: 3, outlets: 3, noise: 3, coffee: 3).save(validate: false)
+          workspace.ratings.new(wifi: 1, seating: 1, outlets: 1, noise: 1, coffee: 1).save(validate: false)
         end
         describe "returns average ratings" do
           it "for wifi" do

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160203232726) do
+ActiveRecord::Schema.define(version: 20160204140926) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160203232726) do
     t.integer  "outlets"
     t.integer  "noise"
     t.integer  "coffee"
+    t.integer  "user_id"
   end
 
   add_index "ratings", ["workspace_id"], name: "index_ratings_on_workspace_id", using: :btree
@@ -51,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160203232726) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   add_foreign_key "ratings", "workspaces"
