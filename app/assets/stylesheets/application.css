@@ -21,6 +21,8 @@
    width: 80%;
  }
 
+
+
  .registration-bg {
    padding-top: 10%;
    height: 100%;
@@ -51,3 +53,24 @@
  .panel-heading h1 {
    text-align: center;
  }
+
+ .add-place-button {
+   width: 40%;
+ }
+
+ .place-title {
+   color: green;
+ }
+
+ .add-place {
+   padding-top: 10%;
+   height: 100%;
+   background-image: url('header-bg.jpg');
+   -moz-background-size: cover;
+   -webkit-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+ }
+
+
+
