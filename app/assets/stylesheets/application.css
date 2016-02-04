@@ -55,7 +55,7 @@
  }
 
  .add-place-button {
-   width: 40%;
+   width: 80%;
  }
 
  .place-title {
@@ -70,6 +70,17 @@
    -webkit-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
+ }
+
+ .add-place-panel {
+   border-radius: 8px;
+   margin-bottom: 5px;
+   border: 5px solid rgba(255, 255, 255, .5);
+   background: hsla(0, 100%, 100%, 0.6);
+   margin-right: 0px;
+   position: relative;
+   text-align: center;
+
  }
 
 
