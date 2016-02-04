@@ -12,14 +12,16 @@ class Workspace < ActiveRecord::Base
     ratings.average(att)
   end
 
-  def self.get_place_id(workspace)
-    url = URI.parse("https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=#{workspace.latitude},#{workspace.longitude}&rankby=distance&name=#{workspace.name}&types=establishment&key=AIzaSyAkk0WzkJl4oPNEYm6YbpXasQHRfHB3zSk")
-    http = Net::HTTP.new(url.host, url.port)
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE # You should use VERIFY_PEER in production
-    request = Net::HTTP::Get.new(url.request_uri)
-    res = http.request(request)
-    puts res.body
+  def overall_rating
+    return "N/A" if ratings.none?
+    calculate_attr_average
   end
 
+  private
+
+  def calculate_attr_average
+    (self.average_rating(:wifi) + self.average_rating(:seating) +
+      self.average_rating(:outlets) + self.average_rating(:noise) +
+      self.average_rating(:coffee))/5
+  end
 end
