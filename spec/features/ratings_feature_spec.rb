@@ -16,13 +16,14 @@ feature "rating workspaces" do
     end
   end
 
-  # scenario "users can only rate workspaces once" do
-  #   sign_up(email, password, password_confirmation)
-  #   add_workspace("Trade")
-  #   rate_workspace("Trade", 5, 1, 5)
-  #   rate_workspace("Trade", 5, 1, 5)
-  #   expect(page).to have_content "You have already rated Trade's wifi"
-  # end
+  context "rate workspaces once only" do
+    scenario "users can only rate workspaces once" do
+      add_workspace("Trade")
+      rate_workspace("Trade", 5, 1, 5, 5, 1)
+      rate_workspace("Trade", 5, 1, 5, 5, 1)
+      expect(page).to have_content "You have already rated Trade's wifi"
+    end
+  end
 
   context "viewing attribute average ratings" do
     scenario "users can view average ratings for each attributes" do

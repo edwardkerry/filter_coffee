@@ -11,7 +11,7 @@
 
                 <div class="panel-body">
                    
-                  <%= f.email_field :email, :class => 'panel', required: true, autofocus: true, label: false, placeholder: 'Email', input_html: { class: 'input-lg' } %>
+                  <%= f.email_field :email, :class => "panel", required: true, autofocus: true, label: false, placeholder: "Email", input_html: { class: "input-lg" } %>
                 </div>
 
                 <div class="panel-body">
@@ -19,16 +19,16 @@
                   <% if @minimum_password_length %>
                   <em class="chars">(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %><br />
-                  <%= f.password_field :password, :class => 'panel', autocomplete: "off", required: true, label: false, placeholder: 'Password', input_html: { class: 'input-lg' } %>
+                  <%= f.password_field :password, :class => "panel", autocomplete: "off", required: true, label: false, placeholder: "Password", input_html: { class: "input-lg" } %>
                 </div>
 
                 <div class="panel-body">
                 
-                  <%= f.password_field :password_confirmation, :class => 'panel', required: true, label: false, placeholder: 'Confirm Password', input_html: { class: 'input-lg' } %>
+                  <%= f.password_field :password_confirmation, :class => "panel", required: true, label: false, placeholder: "Confirm Password", input_html: { class: "input-lg" } %>
                 </div>
 
                 <div class="panel-body">
-                  <%= f.submit "Sign up", :class => 'btn btn-success sign-up' %> 
+                  <%= f.submit "Sign up", :class => "btn btn-success sign-up" %> 
                 </div>
               <% end %>
 

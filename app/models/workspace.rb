@@ -1,7 +1,8 @@
 class Workspace < ActiveRecord::Base
+  belongs_to :user
 
   has_many :ratings, dependent: :destroy
-  validates :name, length: {minimum: 1}
+  validates :name, length: {minimum: 1}, uniqueness: true
 
   def average_rating(att)
     return "N/A" if ratings.none?

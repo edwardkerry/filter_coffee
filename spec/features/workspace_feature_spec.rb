@@ -42,7 +42,7 @@ feature "work spaces" do
   end
 
   context "editing workspace entry" do
-    scenario"lets a user edit a workspace" do
+    scenario "lets a user edit a workspace" do
       sign_up("dg@daniela.com", "testtest", "testtest")
       add_workspace("SecondHome")
       click_link "SecondHome"
@@ -64,6 +64,15 @@ feature "work spaces" do
       expect(current_path).to eq "/workspaces"
       expect(page).to have_content "Delete successful"
       expect(page).not_to have_content "SecondHome"
+    end
+  end
+
+  context "user creating workspaces" do
+    scenario "can not create workspace more than once" do
+      sign_up("dg@daniela.com", "testtest", "testtest")
+      add_workspace("SecondHome")
+      add_workspace("SecondHome")
+      expect(page).to have_content "Name has already been taken"
     end
   end
 end
